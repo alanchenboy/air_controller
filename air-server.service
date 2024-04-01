@@ -1,0 +1,16 @@
+[Unit]
+Description=air controller web server.
+
+[Install]
+WantedBy=multi-user.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/alanc/work/air_controller/build/air_controller
+WorkingDirectory=/home/alanc/work/air_controller/build/
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n
